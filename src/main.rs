@@ -1,11 +1,15 @@
-use ferris_says::say;
-use std::io::{stdout, BufWriter};
+use std::io;
 
 fn main() {
-    let stdout = stdout();
-    let message = String::from("Hello fellow Rustaceans!");
-    let width = message.chars().count();
+    println!("請猜測一個數字！");
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &mut writer).unwrap();
+    println!("請輸入你的猜測數字。");
+
+    let mut guess = String::new();
+
+    io::stdin()
+        .read_line(&mut guess)
+        .expect("讀取該行失敗");
+
+    println!("你的猜測數字：{guess}");
 }
