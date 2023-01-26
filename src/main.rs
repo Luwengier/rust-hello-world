@@ -1,12 +1,17 @@
 fn main() {
-    let x = 5;
+    // 加法
+    let sum = 5 + 10;
 
-    let x = x + 1;
+    // 減法
+    let difference = 95.5 - 4.3;
 
-    {
-        let x = x * 2;
-        println!("x 在內部範圍的數值為：{x}");
-    }
+    // 乘法
+    let product = 4 * 30;
 
-    println!("x 的數值為：{x}");
+    // 除法
+    let quotient = 56.7 / 32.2;
+    let truncated = -5 / 3; // 結果爲 -1
+
+    // 取餘
+    let remainder = 43 % 5;
 }
