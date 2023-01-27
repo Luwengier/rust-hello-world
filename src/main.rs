@@ -1,17 +1,24 @@
+use std::io;
+
 fn main() {
-    // 加法
-    let sum = 5 + 10;
+    let a = [1, 2, 3, 4, 5];
 
-    // 減法
-    let difference = 95.5 - 4.3;
+    println!("請輸入陣列索引");
 
-    // 乘法
-    let product = 4 * 30;
+    let mut index = String::new();
 
-    // 除法
-    let quotient = 56.7 / 32.2;
-    let truncated = -5 / 3; // 結果爲 -1
+    io::stdin()
+        .read_line(&mut index)
+        .expect("讀行失敗");
 
-    // 取餘
-    let remainder = 43 % 5;
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("輸入的索引並非數字");
+
+    let element = a[index];
+
+    println!(
+        "索引 {index} 元素的數值爲：{element}"
+    );
 }
