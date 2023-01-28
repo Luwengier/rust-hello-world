@@ -1,24 +1,7 @@
-use std::io;
-
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+    print_labeled_measurement(5, 'h');
+}
 
-    println!("請輸入陣列索引");
-
-    let mut index = String::new();
-
-    io::stdin()
-        .read_line(&mut index)
-        .expect("讀行失敗");
-
-    let index: usize = index
-        .trim()
-        .parse()
-        .expect("輸入的索引並非數字");
-
-    let element = a[index];
-
-    println!(
-        "索引 {index} 元素的數值爲：{element}"
-    );
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("測量值爲：{value}{unit_label}");
 }
